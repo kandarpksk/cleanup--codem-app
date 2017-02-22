@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"bower_components",
+				"dist",
+				".tmp"
+			],
+			"path": "/Users/kandarpksk/Documents/codemotion/webapp",
+			"file_exclude_patterns":
+			[
+				"temp"
+			]
+		}
+	]
+}
