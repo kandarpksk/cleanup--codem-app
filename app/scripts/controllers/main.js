@@ -16,22 +16,13 @@
 //      ];
 //    });
 
-angular.module('codemotionApp',
-      [
-         'ngSanitize',
-         'com.2fdevs.videogular',
-         'com.2fdevs.videogular.plugins.controls',
-         'com.2fdevs.videogular.plugins.overlayplay',
-         'com.2fdevs.videogular.plugins.poster'
-      ]
-   )
-   .controller('MainCtrl',
-      ['$scope', function ($scope) {
-         this.config = {
+angular.module('codemotionApp')
+   .controller('MainCtrl', function ($scope, $sce) {
+         $scope.config = {
             sources: [
-               {src: $scope.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.mp4'), type: 'video/mp4'},
-               {src: $scope.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.webm'), type: 'video/webm'},
-               {src: $scope.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.ogg'), type: 'video/ogg'}
+               {src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.mp4'), type: 'video/mp4'},
+               {src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.webm'), type: 'video/webm'},
+               {src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.ogg'), type: 'video/ogg'}
             ],
             tracks: [
                {
@@ -48,5 +39,4 @@ angular.module('codemotionApp',
                poster: 'http://www.videogular.com/assets/images/videogular.png'
             }
          };
-      }]
-   );
+      });
