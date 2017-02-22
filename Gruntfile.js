@@ -77,7 +77,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: false, // autorun browser
+          open: true, // autorun browser
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -338,7 +338,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'webappApp',
+          module: 'codemotionApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },

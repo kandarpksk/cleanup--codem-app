@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="styles/main.css">
       <!-- endbuild -->
    </head>
-   <body ng-app="webappApp">
+   <body ng-app="codemotionApp">
       <!--[if lte IE 8]>
          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -33,7 +33,7 @@
                      <span class="icon-bar"></span>
                   </button>
 
-                  <a class="navbar-brand" href="#/">webapp</a>
+                  <a class="navbar-brand" href="#/">Codemotion</a>
                </div>
 
                <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -82,13 +82,18 @@
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-touch/angular-touch.js"></script>
       <script src="bower_components/underscore/underscore.js"></script>
+      <script src="bower_components/videogular/videogular.js"></script>
+      <script src="bower_components/videogular-controls/vg-controls.js"></script>
+      <script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+      <script src="bower_components/videogular-poster/vg-poster.js"></script>
+      <script src="bower_components/videogular-buffering/vg-buffering.js"></script>
       <!-- endbower -->
       <!-- endbuild -->
 
             <!-- build:js({.tmp,app}) scripts/scripts.js -->
-            <script src="scripts/app.js"></script>
             <script src="scripts/controllers/main.js"></script>
             <script src="scripts/controllers/about.js"></script>
+            <script src="scripts/app.js"></script>
             <!-- endbuild -->
 </body>
 </html>

@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name webappApp
+ * @name codemotionApp
  * @description
- * # webappApp
+ * # codemotionApp
  *
  * Main module of the application.
  */
 angular
-  .module('webappApp', [
+  .module('codemotionApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
