@@ -12,13 +12,6 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "underscore": "^1.8.3",
-    "videogular": "1.4.4",
-    "videogular-controls": "^1.4.4",
-    "videogular-overlay-play": "^1.4.4",
-    "videogular-poster": "^1.4.4",
-    "videogular-buffering": "^1.4.4",
-    "videogular-ima-ads": "^1.4.4",
-    "videogular-angulartics": "^1.4.4",
     "angular-ui-ace": "0.2.3"
   },
   "devDependencies": {

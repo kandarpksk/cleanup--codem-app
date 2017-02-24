@@ -7,36 +7,35 @@
  * # MainCtrl
  * Controller of the codemotionApp
  */
-// angular.module('codemotionApp')
-//    .controller('MainCtrl', function () {
-//      this.awesomeThings = [
-//        'HTML5 Boilerplate',
-//        'AngularJS',
-//        'Karma'
-//      ];
-//    });
-
 angular.module('codemotionApp')
-   .controller('MainCtrl', function ($scope, $sce) {
-         $scope.config = {
-            sources: [
-               {src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.mp4'), type: 'video/mp4'},
-               {src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.webm'), type: 'video/webm'},
-               {src: $sce.trustAsResourceUrl('http://static.videogular.com/assets/videos/videogular.ogg'), type: 'video/ogg'}
-            ],
-            tracks: [
-               {
-                  src: 'http://www.videogular.com/assets/subs/pale-blue-dot.vtt',
-                  kind: 'subtitles',
-                  srclang: 'en',
-                  label: 'English',
-                  default: ''
-               }
-            ],
-            theme: 'bower_components/videogular-themes-default/videogular.css',
-
-            plugins: {
-               poster: 'http://www.videogular.com/assets/images/videogular.png'
+   .controller('MainCtrl', function ($scope) {//, $sce) {
+         // make it a loop based on num. of segments
+         $scope.segments = [
+            {
+               url: 'videos/5aP9Bl9hcqI_2_720p.mp4',
+               code: '# main code of first segment'
+            },
+            {
+               url: 'videos/5aP9Bl9hcqI_2_720p.mp4',
+               code: '# main code of next segment'
+            },
+            {
+               url: 'videos/5aP9Bl9hcqI_2_720p.mp4',
+               code: '# main code of third segment'
+            },
+            {
+               url: 'videos/5aP9Bl9hcqI_2_720p.mp4',
+               code: '# main code of last segment'
             }
+         ];
+
+         // var i;
+         // for (i = 0; i < $scope.segments.length; i++) {
+         //    angular.element('aceText'+i).val($scope.segments[i].src);
+         // }
+
+         $scope.aceLoaded = function(_editor) {
+            // options
+            _editor.setReadOnly(true); // does not work
          };
       });

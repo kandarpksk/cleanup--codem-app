@@ -2,12 +2,13 @@
    <div class="container">
       <div class="navbar-header">
 
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+         <!-- <button type="button" class="navbar-toggle collapsed"
+               data-toggle="collapse" data-target="#js-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-         </button>
+         </button> -->
 
          <a class="navbar-brand" href="#/">Codemotion</a>
       </div>
@@ -23,32 +24,45 @@
    </div>
 </div>
 
-<!-- <div ng-app="codemotionApp">
-   <div ng-controller="MainCtrl as controller" class="videogular-container">
-      <videogular vg-theme="controller.config.theme">
-         <vg-media vg-src="controller.config.sources"
-               vg-tracks="controller.config.tracks">
-         </vg-media> -->
-         <!-- {{sources}} -->
+<!-- http://stackoverflow.com/questions/19254400/is-it-bad-to-declare-ng-app-and-ng-controller-on-same-element -->
+<div ng-app="codemotionApp" ng-controller="MainCtrl as controller">
+   <div ng-repeat="seg in segments">
+      
+      <textarea style="display:block">transcript for current frame (part {{$index+1}})</textarea>
 
-         <!-- <vg-controls>
-            <vg-play-pause-button></vg-play-pause-button>
-            <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-            <vg-scrub-bar>
-               <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-            </vg-scrub-bar>
-            <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-            <vg-volume>
-               <vg-mute-button></vg-mute-button>
-               <vg-volume-bar></vg-volume-bar>
-            </vg-volume>
-            <vg-fullscreen-button></vg-fullscreen-button>
-         </vg-controls>
+      <video id="v{{$index+1}}" class="part" onload="set_start()" preload="metadata" controls>
+         <source src="{{ seg.url }}" type="video/mp4" />
+         Your browser does not support HTML5 video.
+      </video>
 
-         <vg-overlay-play></vg-overlay-play>
-         <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
-      </videogular>
-   </div> -->
+      <textarea class="code">{{seg.code}}</textarea>
 
-   <div ui-ace><!-- </div> --> <!-- ctrl -->
-<!-- </div> -->
+      <!-- <div ui-ace="{ mode: 'python', showGutter: false, onload: aceLoaded}"
+            id="aceText{{$index}}"></div> -->
+      
+      <br>
+      <br>
+
+   </div>
+</div>
+
+<script>
+   function seek_segment(video) { video.currentTime = 410; }
+   function set_start() {
+      console.log("seeking to position of video 1");
+      document.getElementById("v1").currentTime = 410;
+      document.getElementById("v1").addEventListener("loadedmetadata", seek_segment(this), false);
+   }
+
+   $(".part").hover(function toggleControls() {
+      console.log("hover event")
+      if (this.hasAttribute("controls"))
+         this.removeAttribute("controls");
+      else
+         this.setAttribute("controls", "controls");
+   });
+
+   $("#v1").onseeked = function() {
+      alert("seek operation performed");
+   };
+</script>

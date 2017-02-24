@@ -110,6 +110,26 @@ body {
   }
 }
 
-.ace_editor {
-  height: 200px;
+.ace_editor,
+video,
+.code {
+  height: 146px;
+  width: 49%;
+  border: 1px solid lightgray;
+  display: inline;
+  margin-top: 13px;
+  background-color: white;
+  font-family: monospace;
+}
+
+video {
+  margin-right: 1%;
+}
+
+textarea {
+  height: 30px;
+  width: 99%;
+  border: 2px dotted lightgray;
+  resize: none;
+  background-color: lightyellow;
 }
